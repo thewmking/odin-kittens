@@ -1,0 +1,14 @@
+h1 Photo Stream
+
+= form_tag("/home", :method => :get) do
+  = label_tag :user_id
+  = text_field_tag :user_id, params[:user_id]
+  = submit_tag "Fetch flickr photos"
+
+- if @photos.present?
+  .flickr
+    ul
+      - @photos.each do |photo|
+        li
+          - info = flickr.photos.getInfo(:photo_id => "#{photo.id}")
+          = link_to(image_tag(FlickRaw.url_s(info), :class => "flickr_photo", :title => photo["title"], :border => 0, :size => "75x75"), FlickRaw.url(info))
