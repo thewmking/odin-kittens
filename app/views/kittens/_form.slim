@@ -1,0 +1,16 @@
+= form_for @kitten do |k|
+  = k.label :name
+  = k.text_field :name, class: 'form-control', placeholder: 'name'
+  
+  = k.label :age
+  = k.number_field :age, class: 'form-control', placeholder: '5'
+  
+  = k.label :cuteness
+  = k.number_field :cuteness, class: 'form-control', placeholder: '1-10'
+  
+  = k.label :softness
+  = k.number_field :softness, class: 'form-control', placeholder: '1-10'
+
+  = k.submit "Create Kitten", class: 'btn btn-primary'
+
+= link_to "delete", @kitten, method: :delete, data: { confirm: "Are you sure?"}

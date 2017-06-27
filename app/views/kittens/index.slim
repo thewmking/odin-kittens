@@ -1,0 +1,6 @@
+- provide(:title, 'All kittens')
+h1 All Kittens
+
+- if @kittens.present?
+ul.kittens
+  = render @kittens

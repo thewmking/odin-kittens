@@ -1,0 +1,17 @@
+- provide(:title, @kitten.name)
+.row
+  aside.col-md-4
+    section.kitten_info
+      h1 
+        = @kitten.name
+      .age
+        | Age: 
+        = @kitten.age
+      .cuteness
+        | Cuteness rating: 
+        = @kitten.cuteness
+      .softness
+        | Softness rating: 
+        = @kitten.softness
+= link_to "edit",   edit_kitten_url(@kitten)
+= link_to "delete", @kitten, method: :delete, data: { confirm: "Are you sure?"}
